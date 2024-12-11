@@ -24,7 +24,7 @@ const Banner = () => {
           <motion.h1
             animate={{ x: 40 }}
             transition={{
-              duration: 0.3,
+              duration: 0.4,
               delay: 1,
               ease: "linear",
               // repeat: Infinity,
