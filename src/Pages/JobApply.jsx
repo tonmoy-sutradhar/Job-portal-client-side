@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UseAuth from "../Hook/UseAuth";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,8 @@ const JobApply = () => {
   // custom hook use
   const { user } = UseAuth();
   console.log(id, user);
+
+  const navigate = useNavigate();
 
   const handleSubmitJob = (e) => {
     e.preventDefault();
@@ -52,6 +54,7 @@ const JobApply = () => {
               `,
             },
           });
+          navigate("/myApplication");
         }
         console.log(data, "job apply data");
       });
