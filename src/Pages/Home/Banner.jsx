@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className="hero  min-h-96">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="flex-1">
+        <div className="flex-1 ml-16">
           <motion.img
             animate={{ y: [0, 50, 0] }}
             transition={{ duration: 5, repeat: Infinity }}
@@ -20,9 +20,9 @@ const Banner = () => {
             className="max-w-sm w-64 rounded-t-[40px] rounded-br-[40px] border-l-8 border-b-8 border-blue-500 shadow-2xl"
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ml-8">
           <motion.h1
-            animate={{ x: 40 }}
+            animate={{ x: 0 }}
             transition={{
               duration: 0.4,
               delay: 1,

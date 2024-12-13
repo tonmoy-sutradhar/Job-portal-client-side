@@ -25,11 +25,6 @@ const MyApplication = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
               <th>Name</th>
               <th>Job</th>
               <th>Favorite Color</th>
@@ -40,11 +35,6 @@ const MyApplication = () => {
             {/* row 1 */}
             {jobs.map((job, indx) => (
               <tr key={indx}>
-                <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
-                </th>
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
