@@ -8,7 +8,7 @@ const SignIn = () => {
   const { signUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  const from = location?.state || "/";
+  const path = location?.state || "/";
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -24,8 +24,8 @@ const SignIn = () => {
     signUser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate(from);
         console.log(user);
+        navigate(path);
       })
       .catch((error) => {
         const errorCode = error.code;
