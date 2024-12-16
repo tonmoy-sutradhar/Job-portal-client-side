@@ -1,17 +1,27 @@
 import { useEffect, useState } from "react";
 import UseAuth from "../../Hook/UseAuth";
 import { MdDelete } from "react-icons/md";
+import axios from "axios";
 const MyApplication = () => {
   const { user } = UseAuth();
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/job-applications?email=${user.email}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setJobs(data);
-        console.log(data);
+    // fetch(`http://localhost:5000/job-applications?email=${user.email}`)
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     setJobs(data);
+    //     console.log(data);
+    //   });
+
+    axios
+      .get(`http://localhost:5000/job-applications?email=${user.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res.data);
       });
+
     // user.email k dependency sihebe set kore dilam cz email dynamic
   }, [user.email]);
   return (

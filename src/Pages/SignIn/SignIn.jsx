@@ -28,10 +28,12 @@ const SignIn = () => {
         console.log(result.email);
         const user = { email: email };
 
-        axios.post("http://localhost:5000/jwt", user).then((res) => {
-          console.log(res.data);
-        });
-        navigate(path);
+        axios
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+          });
+        // navigate(path);
       })
       .catch((error) => {
         const errorCode = error.code;
