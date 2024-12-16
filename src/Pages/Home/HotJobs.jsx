@@ -9,7 +9,7 @@ const HotJobs = () => {
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
-        console.log(jobs, "Jobs data here");
+        // console.log(jobs, "Jobs data here");
       });
   }, []);
 
