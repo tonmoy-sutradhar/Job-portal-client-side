@@ -20,6 +20,7 @@ const MyApplication = () => {
       })
       .then((res) => {
         console.log(res.data);
+        setJobs(res.data);
       });
 
     // user.email k dependency sihebe set kore dilam cz email dynamic
