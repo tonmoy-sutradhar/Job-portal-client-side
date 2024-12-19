@@ -33,3 +33,12 @@ const UseAxiosSecure = () => {
 };
 
 export default UseAxiosSecure;
+
+// How to implement UseAxios
+/**
+ * Axios: get,post, put/patch, delete -----> easier
+ * interceptor: client ----------------|-----------------> server
+ * client <-------------------------?--------------------> server
+ * in the interceptor for response == needs two function (response, error)
+ *
+ */
