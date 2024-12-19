@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import UseAuth from "../../Hook/UseAuth";
 import { MdDelete } from "react-icons/md";
 import axios from "axios";
+import UseAxiosSecure from "../../Hook/UseAxiosSecure";
 const MyApplication = () => {
   const { user } = UseAuth();
   const [jobs, setJobs] = useState([]);
+
+  const axiosSecure = UseAxiosSecure();
 
   useEffect(() => {
     // fetch(`http://localhost:5000/job-applications?email=${user.email}`)
@@ -14,14 +17,20 @@ const MyApplication = () => {
     //     console.log(data);
     //   });
 
-    axios
-      .get(`http://localhost:5000/job-applications?email=${user.email}`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        setJobs(res.data);
-      });
+    // axios
+    //   .get(`http://localhost:5000/job-applications?email=${user.email}`, {
+    //     withCredentials: true,
+    //   })
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setJobs(res.data);
+    //   });
+
+    // use my create hook
+    axiosSecure.get(`/job-applications?email=${user.email}`).then((res) => {
+      console.log(res.data);
+      setJobs(res.data);
+    });
 
     // user.email k dependency sihebe set kore dilam cz email dynamic
   }, [user.email]);
